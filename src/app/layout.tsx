@@ -4,6 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingButtons from "@/components/layout/FloatingButtons";
 import { CONFIG } from "@/lib/constants";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: {
@@ -94,6 +95,7 @@ export default function RootLayout({
         {children}
         <FloatingButtons />
         <Footer />
+        <Analytics />
         {/* Spacer for mobile sticky CTA bar */}
         <div className="h-14 lg:hidden" />
       </body>
