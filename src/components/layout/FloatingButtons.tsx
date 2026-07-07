@@ -9,7 +9,8 @@ export default function FloatingButtons() {
     <div className="fixed bottom-24 right-5 z-30 hidden lg:flex flex-col gap-3" aria-label="Quick contact">
       <a
         href={CONFIG.callLink}
-        className="w-14 h-14 rounded-full bg-forest text-white flex items-center justify-center shadow-lg hover:bg-emerald hover:scale-110 transition-all duration-200"
+        className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-200"
+        style={{ background: "#1A8D7A", color: "#fff" }}
         title="Call Now"
         id="float-call-btn"
       >
@@ -19,7 +20,8 @@ export default function FloatingButtons() {
         href={CONFIG.whatsapp}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:bg-[#22c55e] hover:scale-110 transition-all duration-200"
+        className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-200"
+        style={{ background: "#25D366", color: "#fff" }}
         title="WhatsApp Us"
         id="float-whatsapp-btn"
       >

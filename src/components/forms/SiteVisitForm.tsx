@@ -44,9 +44,9 @@ export default function SiteVisitForm() {
   if (state === "success") {
     return (
       <div className="text-center py-8">
-        <CheckCircle size={42} className="text-forest mx-auto mb-3" />
+        <CheckCircle size={42} className="mx-auto mb-3" style={{ color: "#1A8D7A" }} />
         <h3 className="mb-2">Site Visit Booked!</h3>
-        <p className="text-text-mid">We&apos;ll confirm your visit details via call or WhatsApp shortly. See you there!</p>
+        <p style={{ color: "#6A6A6A" }}>We&apos;ll confirm your visit details via call or WhatsApp shortly. See you there!</p>
       </div>
     );
   }
@@ -92,14 +92,14 @@ export default function SiteVisitForm() {
         </div>
       </div>
       <div className="flex items-start gap-2 mb-4">
-        <input id="sv-consent" type="checkbox" name="consent" checked={form.consent} onChange={handleChange} className="mt-1 cursor-pointer accent-forest" required />
-        <label htmlFor="sv-consent" className="text-[0.8rem] text-text-mid leading-relaxed cursor-pointer">
+        <input id="sv-consent" type="checkbox" name="consent" checked={form.consent} onChange={handleChange} className="mt-1 cursor-pointer" style={{ accentColor: "#1A8D7A" }} required />
+        <label htmlFor="sv-consent" className="text-[0.8rem] leading-relaxed cursor-pointer" style={{ color: "#6A6A6A" }}>
           I consent to Riddhi Siddhi Properties contacting me for this site visit. See{" "}
-          <a href="/privacy-policy" className="text-forest underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+          <a href="/privacy-policy" className="underline" style={{ color: "#1A8D7A" }} target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
         </label>
       </div>
-      {errorMsg && <div className="flex items-center gap-2 text-red-600 text-[0.82rem] mb-3"><AlertCircle size={14} /> {errorMsg}</div>}
-      {state === "error" && <div className="flex items-center gap-2 text-red-600 text-[0.82rem] mb-3"><AlertCircle size={14} /> Something went wrong. Please call us directly.</div>}
+      {errorMsg && <div className="flex items-center gap-2 text-[0.82rem] mb-3" style={{ color: "#b91c1c" }}><AlertCircle size={14} /> {errorMsg}</div>}
+      {state === "error" && <div className="flex items-center gap-2 text-[0.82rem] mb-3" style={{ color: "#b91c1c" }}><AlertCircle size={14} /> Something went wrong. Please call us directly.</div>}
       <button type="submit" className="btn btn-primary w-full justify-center" disabled={state === "loading"}>
         {state === "loading" ? "Booking..." : <><Calendar size={15} /> Book Site Visit</>}
       </button>

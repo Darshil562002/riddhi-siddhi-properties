@@ -27,13 +27,11 @@ export default function ProjectEnquiryForm({ projectName }: Props) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (form.honeypot) return; // spam trap
-
+    if (form.honeypot) return;
     const err = validate();
     if (err) { setErrorMsg(err); return; }
     setErrorMsg("");
     setState("loading");
-
     try {
       const res = await fetch("/api/enquiry", {
         method: "POST",
@@ -54,16 +52,15 @@ export default function ProjectEnquiryForm({ projectName }: Props) {
   if (state === "success") {
     return (
       <div className="text-center py-4">
-        <CheckCircle size={36} className="text-forest mx-auto mb-3" />
+        <CheckCircle size={36} className="mx-auto mb-3" style={{ color: "#1A8D7A" }} />
         <h4 className="mb-1">Enquiry Sent!</h4>
-        <p className="text-[0.85rem] text-text-mid">We&apos;ll contact you within 24 hours. Thank you!</p>
+        <p className="text-[0.85rem]" style={{ color: "#6A6A6A" }}>We&apos;ll contact you within 24 hours. Thank you!</p>
       </div>
     );
   }
 
   return (
     <form onSubmit={handleSubmit} noValidate aria-label={`Enquiry form for ${projectName}`}>
-      {/* Honeypot */}
       <input type="text" name="honeypot" value={form.honeypot} onChange={handleChange} className="hidden" tabIndex={-1} aria-hidden="true" />
 
       <div className="form-group">
@@ -91,25 +88,16 @@ export default function ProjectEnquiryForm({ projectName }: Props) {
         <textarea id="enq-msg" name="message" value={form.message} onChange={handleChange} className="form-textarea" placeholder="Any specific requirement..." style={{ minHeight: "70px" }} />
       </div>
 
-      {/* Consent */}
       <div className="flex items-start gap-2 mb-4">
-        <input id="enq-consent" type="checkbox" name="consent" checked={form.consent} onChange={handleChange} className="mt-1 cursor-pointer accent-forest" required />
-        <label htmlFor="enq-consent" className="text-[0.78rem] text-text-mid leading-relaxed cursor-pointer">
+        <input id="enq-consent" type="checkbox" name="consent" checked={form.consent} onChange={handleChange} className="mt-1 cursor-pointer" style={{ accentColor: "#1A8D7A" }} required />
+        <label htmlFor="enq-consent" className="text-[0.78rem] leading-relaxed cursor-pointer" style={{ color: "#6A6A6A" }}>
           I consent to Riddhi Siddhi Properties storing my information to respond to this enquiry. See our{" "}
-          <a href="/privacy-policy" className="text-forest underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+          <a href="/privacy-policy" className="underline" style={{ color: "#1A8D7A" }} target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
         </label>
       </div>
 
-      {errorMsg && (
-        <div className="flex items-center gap-2 text-red-600 text-[0.82rem] mb-3">
-          <AlertCircle size={14} /> {errorMsg}
-        </div>
-      )}
-      {state === "error" && (
-        <div className="flex items-center gap-2 text-red-600 text-[0.82rem] mb-3">
-          <AlertCircle size={14} /> Something went wrong. Please call us directly.
-        </div>
-      )}
+      {errorMsg && <div className="flex items-center gap-2 text-[0.82rem] mb-3" style={{ color: "#b91c1c" }}><AlertCircle size={14} /> {errorMsg}</div>}
+      {state === "error" && <div className="flex items-center gap-2 text-[0.82rem] mb-3" style={{ color: "#b91c1c" }}><AlertCircle size={14} /> Something went wrong. Please call us directly.</div>}
 
       <button type="submit" className="btn btn-primary w-full justify-center" disabled={state === "loading"}>
         {state === "loading" ? "Sending..." : <><Send size={14} /> Send Enquiry</>}

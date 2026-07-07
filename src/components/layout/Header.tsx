@@ -40,23 +40,28 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-border-lt"
-            : "bg-white"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300`}
+        style={{
+          background: isScrolled ? "rgba(255,253,246,0.97)" : "#FFFDF6",
+          borderBottom: isScrolled ? "1px solid #E0D5B8" : "1px solid #E0D5B8",
+          backdropFilter: isScrolled ? "blur(12px)" : "none",
+          boxShadow: isScrolled ? "0 2px 12px rgba(31,41,51,0.07)" : "none",
+        }}
       >
         <div className="container flex items-center justify-between h-[72px]">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 no-underline">
-            <div className="w-10 h-10 rounded-lg bg-forest flex items-center justify-center text-white font-serif font-bold text-lg">
+            <div
+              className="w-10 h-10 rounded-lg flex items-center justify-center font-serif font-bold text-lg leading-none"
+              style={{ background: "#1F2933", color: "#F5B301" }}
+            >
               RS
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="font-serif font-semibold text-dark text-[1.05rem]">
+              <span className="font-serif font-semibold text-[1.05rem]" style={{ color: "#1F2933" }}>
                 Riddhi Siddhi
               </span>
-              <span className="text-[0.65rem] font-semibold tracking-[0.12em] uppercase text-text-light">
+              <span className="text-[0.65rem] font-semibold tracking-[0.12em] uppercase" style={{ color: "#6A6A6A" }}>
                 Properties
               </span>
             </div>
@@ -68,11 +73,14 @@ export default function Header() {
               <Link
                 key={item.id}
                 href={item.href}
-                className={`px-4 py-2 rounded-lg text-[0.88rem] font-medium transition-colors no-underline ${
+                className={`px-4 py-2 rounded-lg text-[0.88rem] font-medium transition-colors no-underline`}
+                style={
                   activeId === item.id
-                    ? "text-forest bg-green-pale"
-                    : "text-text-mid hover:text-forest hover:bg-green-pale/50"
-                }`}
+                    ? { color: "#1F2933", background: "#FFF7D1", fontWeight: 600 }
+                    : { color: "#4A4A4A" }
+                }
+                onMouseEnter={(e) => { if (activeId !== item.id) (e.currentTarget as HTMLElement).style.background = "#FFF7D1"; }}
+                onMouseLeave={(e) => { if (activeId !== item.id) (e.currentTarget as HTMLElement).style.background = "transparent"; }}
               >
                 {item.label}
               </Link>
@@ -83,7 +91,8 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-3">
             <a
               href={CONFIG.callLink}
-              className="flex items-center gap-1.5 text-[0.85rem] font-semibold text-forest hover:text-emerald transition-colors no-underline"
+              className="flex items-center gap-1.5 text-[0.85rem] font-semibold no-underline transition-colors"
+              style={{ color: "#1A8D7A" }}
               id="header-call-btn"
             >
               <Phone size={14} />
@@ -93,7 +102,8 @@ export default function Header() {
               href={CONFIG.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#25D366] text-white text-[0.82rem] font-semibold hover:bg-[#22c55e] transition-colors no-underline"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[0.82rem] font-semibold no-underline transition-colors"
+              style={{ background: "#25D366", color: "#fff" }}
               id="header-whatsapp-btn"
             >
               <WhatsAppIcon size={14} />
@@ -103,22 +113,23 @@ export default function Header() {
 
           {/* Hamburger */}
           <button
-            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-warm-white transition-colors"
+            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg transition-colors"
+            style={{ background: "transparent" }}
             onClick={toggleMobile}
             aria-label="Toggle navigation"
             aria-expanded={isMobileOpen}
           >
-            {isMobileOpen ? <X size={22} /> : <Menu size={22} />}
+            {isMobileOpen
+              ? <X size={22} style={{ color: "#1F2933" }} />
+              : <Menu size={22} style={{ color: "#1F2933" }} />}
           </button>
         </div>
       </header>
 
       {/* Mobile Navigation */}
       <nav
-        className={`fixed inset-0 z-40 bg-white transition-transform duration-300 lg:hidden ${
-          isMobileOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-        style={{ top: "72px" }}
+        className={`fixed inset-0 z-40 transition-transform duration-300 lg:hidden`}
+        style={{ top: "72px", background: "#FFFDF6", transform: isMobileOpen ? "translateX(0)" : "translateX(100%)" }}
         aria-label="Mobile navigation"
       >
         <div className="flex flex-col p-6 gap-1">
@@ -126,11 +137,12 @@ export default function Header() {
             <Link
               key={item.id}
               href={item.href}
-              className={`px-4 py-3 rounded-lg text-base font-medium transition-colors no-underline ${
+              className="px-4 py-3 rounded-lg text-base font-medium transition-colors no-underline"
+              style={
                 activeId === item.id
-                  ? "text-forest bg-green-pale"
-                  : "text-text-mid hover:text-forest hover:bg-green-pale/50"
-              }`}
+                  ? { color: "#1F2933", background: "#FFF7D1", fontWeight: 600 }
+                  : { color: "#4A4A4A" }
+              }
               onClick={() => {
                 setIsMobileOpen(false);
                 document.body.style.overflow = "";
@@ -139,7 +151,7 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <div className="flex flex-col gap-3 mt-6 pt-6 border-t border-border-lt">
+          <div className="flex flex-col gap-3 mt-6 pt-6" style={{ borderTop: "1px solid #E0D5B8" }}>
             <a href={CONFIG.callLink} className="btn btn-primary" id="mobile-call-btn">
               <Phone size={16} />
               Call Now — {CONFIG.phoneDisplay}
