@@ -7,9 +7,9 @@ import { WhatsAppIcon } from "@/components/ui/Icons";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Riddhi Siddhi Properties — Call Keval Gala | +91 80079 81876",
+  title: "Contact Riddhi Siddhi Properties — Call Keval Gala | +91 96194 22555",
   description:
-    "Contact Riddhi Siddhi Properties. Speak with Keval Gala for property guidance, site visits, and home buying assistance. Call +91 80079 81876 or WhatsApp us from Shahapur–Asangaon, Thane.",
+    "Contact Riddhi Siddhi Properties. Speak with Keval Gala for property guidance, site visits, and home buying assistance. Call +91 96194 22555 or WhatsApp us from Shahapur–Asangaon, Thane.",
   alternates: { canonical: "/contact" },
 };
 
@@ -27,14 +27,14 @@ const contactSchema = {
       "@type": "LocalBusiness",
       name: CONFIG.brand,
       description: "Trusted real estate advisory for home buyers in Shahapur–Asangaon, Thane.",
-      telephone: "+91-80079-81876",
+      telephone: "+91-96194-22555",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Shahapur",
         addressRegion: "Maharashtra",
         addressCountry: "IN",
       },
-      openingHours: "Mo-Sa 09:00-19:00",
+      openingHours: "Mo Tu We Th Fr Sa Su 09:00-19:00",
       priceRange: "Free Consultation",
     },
   ],

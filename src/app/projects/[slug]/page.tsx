@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, MapPin, Download, ExternalLink, CheckCircle, Play } from "lucide-react";
+import { Phone, MapPin, Download, ExternalLink, CheckCircle, Play, Shield } from "lucide-react";
 import { getProjectBySlug, getAllProjectSlugs, PROJECTS } from "@/lib/projects";
 import ProjectEnquiryForm from "@/components/forms/ProjectEnquiryForm";
 import ProjectCard from "@/components/ui/ProjectCard";
@@ -89,6 +89,17 @@ export default async function ProjectDetailPage({ params }: Props) {
         }`}>{project.statusLabel}</span>
       </div>
 
+      {project.underConstruction && (
+        <div className="bg-amber-50 border-b border-amber-200">
+          <div className="container py-3">
+            <div className="flex items-center gap-2 text-amber-800 text-[0.9rem]">
+              <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse flex-shrink-0" />
+              <strong>Under Construction:</strong> This project is currently in the pre-launch/construction phase. Details may be subject to change.
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Sticky Meta Strip */}
       <div className="bg-white border-b border-border-lt sticky top-[72px] z-20 shadow-sm">
         <div className="container py-4">
@@ -166,16 +177,42 @@ export default async function ProjectDetailPage({ params }: Props) {
                 </div>
               </div>
 
-              {/* Specifications */}
+              {/* Specifications & RERA */}
               <div>
-                <h2 className="text-[1.4rem] mb-5">Project Specifications</h2>
-                <div className="grid sm:grid-cols-2 gap-0 border border-border-lt rounded-xl overflow-hidden">
+                <h2 className="text-[1.4rem] mb-5">Project Specifications &amp; Legal</h2>
+                <div className="grid sm:grid-cols-2 gap-0 border border-border-lt rounded-xl overflow-hidden mb-5">
                   {project.specifications.map((s, i) => (
                     <div key={i} className={`flex items-start gap-3 px-5 py-4 ${i % 2 === 0 ? "bg-white" : "bg-warm-white"} border-b border-border-lt last:border-0`}>
                       <div className="text-[0.75rem] font-semibold uppercase tracking-wider text-text-light min-w-[120px] pt-0.5">{s.label}</div>
                       <div className="font-semibold text-dark text-[0.9rem]">{s.value}</div>
                     </div>
                   ))}
+                </div>
+                
+                {/* RERA Section */}
+                <div className="bg-green-pale/30 border border-forest/20 rounded-xl p-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Shield size={18} className="text-forest" />
+                    <h3 className="text-[1.1rem] text-dark">RERA Registration</h3>
+                  </div>
+                  <p className="text-[0.88rem] text-text-mid mb-3">
+                    This project is registered under MahaRERA and its details can be verified on the official website under the registration number:
+                  </p>
+                  <div className="flex items-center flex-wrap gap-4">
+                    <span className="inline-block px-4 py-2 bg-white border border-forest/30 rounded-lg font-mono font-semibold text-forest text-[0.95rem]">
+                      {project.reraNumber || "Number Pending"}
+                    </span>
+                    {project.reraUrl && (
+                      <a 
+                        href={project.reraUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-[0.85rem] text-forest font-semibold hover:underline flex items-center gap-1"
+                      >
+                        Verify on MahaRERA <ExternalLink size={14} />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
 
@@ -257,7 +294,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 <p className="text-text-mid text-[0.85rem] mb-5">Talk to Keval Gala for genuine guidance, pricing details, and to book a site visit.</p>
 
                 <div className="flex flex-col gap-3 mb-6">
-                  <a href="tel:+919619422555" className="btn btn-primary justify-center" id={`detail-call-btn-${project.slug}`}>
+                  <a href={CONFIG.callLink} className="btn btn-primary justify-center" id={`detail-call-btn-${project.slug}`}>
                     <Phone size={15} /> Call Now
                   </a>
                   <a href={CONFIG.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp justify-center" id={`detail-wa-btn-${project.slug}`}>

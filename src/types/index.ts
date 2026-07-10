@@ -32,6 +32,9 @@ export interface Project {
   totalUnits?: string;
   totalArea?: string;
   constructionStatus?: string;
+  reraNumber?: string;
+  reraUrl?: string;
+  underConstruction?: boolean;
 }
 
 export interface Configuration {

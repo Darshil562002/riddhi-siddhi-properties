@@ -108,33 +108,45 @@ export default function EMICalculatorPage() {
                 <div className="text-white/55 text-[0.82rem]">per month for {tenureYears} years</div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { label: "Total Loan Amount", value: formatINR(loanAmount), sub: "Principal" },
-                  { label: "Total Interest", value: formatINR(result.totalInterest), sub: "Cost of borrowing" },
-                  { label: "Total Payment", value: formatINR(result.totalPayment), sub: "Principal + Interest" },
-                  { label: "Interest %", value: `${interestPercent.toFixed(1)}%`, sub: "of total payment" },
-                ].map(s => (
-                  <div key={s.label} className="bg-white border border-border-lt rounded-xl p-5 text-center">
-                    <div className="text-[0.72rem] text-text-light font-semibold uppercase tracking-wider mb-1">{s.label}</div>
-                    <div className="font-serif text-[1.4rem] font-bold text-dark">{s.value}</div>
-                    <div className="text-[0.72rem] text-text-light">{s.sub}</div>
+              {/* Expandable Breakdown Details */}
+              <details className="group border border-border-lt rounded-xl overflow-hidden bg-white mt-5">
+                <summary className="flex items-center justify-between px-5 py-4 cursor-pointer text-[0.95rem] font-semibold text-dark list-none outline-none select-none">
+                  View Detailed Breakdown
+                  <svg className="w-5 h-5 text-forest transition-transform duration-300 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                
+                <div className="px-5 pb-5 space-y-5 border-t border-border-lt/50 pt-5 mt-1">
+                  <div className="grid grid-cols-2 gap-4">
+                    {[
+                      { label: "Total Loan Amount", value: formatINR(loanAmount), sub: "Principal" },
+                      { label: "Total Interest", value: formatINR(result.totalInterest), sub: "Cost of borrowing" },
+                      { label: "Total Payment", value: formatINR(result.totalPayment), sub: "Principal + Interest" },
+                      { label: "Interest %", value: `${interestPercent.toFixed(1)}%`, sub: "of total payment" },
+                    ].map(s => (
+                      <div key={s.label} className="bg-warm-white border border-border-lt/50 rounded-xl p-4 text-center">
+                        <div className="text-[0.72rem] text-text-light font-semibold uppercase tracking-wider mb-1">{s.label}</div>
+                        <div className="font-serif text-[1.3rem] font-bold text-dark">{s.value}</div>
+                        <div className="text-[0.72rem] text-text-light">{s.sub}</div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
 
-              {/* Breakdown bar */}
-              <div className="bg-white border border-border-lt rounded-xl p-5">
-                <div className="text-[0.82rem] font-semibold mb-3">Payment Breakdown</div>
-                <div className="h-4 rounded-full overflow-hidden flex">
-                  <div className="bg-forest transition-all duration-500" style={{ width: `${principalPercent}%` }} />
-                  <div className="bg-gold transition-all duration-500" style={{ width: `${interestPercent}%` }} />
+                  {/* Breakdown bar */}
+                  <div className="bg-warm-white border border-border-lt/50 rounded-xl p-4">
+                    <div className="text-[0.82rem] font-semibold mb-3">Payment Breakdown</div>
+                    <div className="h-4 rounded-full overflow-hidden flex">
+                      <div className="bg-forest transition-all duration-500" style={{ width: `${principalPercent}%` }} />
+                      <div className="bg-gold transition-all duration-500" style={{ width: `${interestPercent}%` }} />
+                    </div>
+                    <div className="flex items-center gap-6 mt-3 text-[0.78rem]">
+                      <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-full bg-forest inline-block" /> Principal ({principalPercent.toFixed(1)}%)</div>
+                      <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-full bg-gold inline-block" /> Interest ({interestPercent.toFixed(1)}%)</div>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-center gap-6 mt-3 text-[0.78rem]">
-                  <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-full bg-forest inline-block" /> Principal ({principalPercent.toFixed(1)}%)</div>
-                  <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-full bg-gold inline-block" /> Interest ({interestPercent.toFixed(1)}%)</div>
-                </div>
-              </div>
+              </details>
             </div>
           </div>
 

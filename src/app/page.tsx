@@ -200,7 +200,7 @@ export default function HomePage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { href: "/buyer-help/pm-awas-yojana",       icon: <Home size={24} style={{ color: "#1A8D7A" }} />, title: "PM Awas Yojana",           desc: "Get up to ₹2.67 lakh government subsidy on your home loan. Check eligibility, documents, and how to apply.",        cta: "Learn More",     id: "shortcut-pmay" },
+              { href: "/buyer-help/pm-awas-yojana",       icon: <Home size={24} style={{ color: "#1A8D7A" }} />, title: "PM Awas Yojana",           desc: "Get up to ₹1.80 lakh government subsidy on your home loan. Check eligibility, documents, and how to apply.",        cta: "Learn More",     id: "shortcut-pmay" },
               { href: "/buyer-help/emi-calculator",        icon: <Calculator size={24} style={{ color: "#1A8D7A" }} />, title: "EMI Calculator",     desc: "Plan your monthly payments with our free offline calculator. See total interest, tenure breakdowns, and loan comparisons.", cta: "Calculate EMI", id: "shortcut-emi" },
               { href: "/buyer-help/home-loan-documents",   icon: <FileText size={24} style={{ color: "#1A8D7A" }} />, title: "Home Loan Documents", desc: "Complete document checklist for salaried and self-employed buyers. Be prepared when you visit the bank.",               cta: "View Checklist", id: "shortcut-docs" },
               { href: "/buyer-help/legal-title-check",     icon: <Shield size={24} style={{ color: "#1A8D7A" }} />, title: "Legal & Title Verification", desc: "How to check if a project is legally approved, title clear, and safe to buy. Essential reading before you invest.", cta: "Read Guide",    id: "shortcut-legal" },

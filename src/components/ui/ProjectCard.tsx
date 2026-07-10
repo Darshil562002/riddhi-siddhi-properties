@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Phone } from "lucide-react";
 import type { Project } from "@/types";
+import { CONFIG } from "@/lib/constants";
 
 interface ProjectCardProps {
   project: Project;
@@ -65,7 +66,11 @@ export default function ProjectCard({ project, titleTag: Tag = "h3" }: ProjectCa
         )}
         <div className="text-[0.78rem]" style={{ color: "#9C5A3C" }}>
           Developer: {project.developer}
-          {project.rera && ` | ${project.rera}`}
+          {(project.reraNumber && project.reraNumber !== "Application Pending — RERA Number to be updated upon registration") 
+            ? ` | RERA: ${project.reraNumber}`
+            : project.rera 
+              ? ` | RERA: ${project.rera}` 
+              : ''}
         </div>
       </div>
 
@@ -78,7 +83,7 @@ export default function ProjectCard({ project, titleTag: Tag = "h3" }: ProjectCa
           View Details
         </Link>
         <a
-          href="tel:+919619422555"
+          href={CONFIG.callLink}
           className="btn btn-primary btn-sm flex-1 justify-center"
         >
           <Phone size={13} />

@@ -2,17 +2,17 @@ export const CONFIG = {
   brand: "Riddhi Siddhi Properties",
   tagline: "Properties",
   contact: "Keval Gala",
-  phone: "+918007981876",
-  phoneDisplay: "+91 80079 81876",
+  phone: "+919619422555",
+  phoneDisplay: "+91 96194 22555",
   altPhone: "+919619422555",
   altPhoneDisplay: "+91 96194 22555",
   whatsapp:
-    "https://wa.me/918007981876?text=Hello%2C%20I%20am%20interested%20in%20a%20property.%20Please%20assist.",
-  callLink: "tel:+918007981876",
+    "https://wa.me/919619422555?text=Hello%2C%20I%20am%20interested%20in%20a%20property.%20Please%20assist.",
+  callLink: "tel:+919619422555",
   email: "info@riddhisiddhiproperties.com",
   // TODO: Replace with actual office address when provided by client
   address: "Shahapur, Thane District, Maharashtra",
-  hours: "Mon–Sat: 9:00 AM – 7:00 PM",
+  hours: "Open All Week: 9:00 AM – 7:00 PM",
   region: "Shahapur–Asangaon, Thane",
   // TODO: Replace with actual domain when configured
   domain: "riddhisiddhiproperties.com",

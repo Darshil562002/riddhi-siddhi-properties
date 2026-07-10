@@ -11,13 +11,16 @@ export const PROJECTS: Project[] = [
     description:
       "Pre-launch affordable apartments by Knox Realty. Asangaon Railway Station just 700 m away. Possession Dec 2028.",
     longDescription:
-      "Symphonee Greens is a pre-launch residential project by Knox Realty, located in Asangaon (East), Taluka Shahapur, Thane District. Situated just 700 metres from Asangaon Railway Station, this project offers excellent connectivity to Mumbai via the Central Railway line. The project features well-planned 1 RK and 1 BHK apartments with modern amenities including a clubhouse, badminton court, children's play area, and landscaped gardens. With FREE Stamp Duty, FREE Registration, and FREE GST, plus eligibility for PMAY benefits up to ₹1.80 Lakhs, Symphonee Greens is one of the most affordable entry points into property ownership in the Thane region.",
+      "Symphonee Greens is a pre-launch residential project by Knox Realty, located in Asangaon (East), Taluka Shahapur, Thane District. Situated just 700 metres from Asangaon Railway Station, this project offers excellent connectivity to Mumbai via the Central Railway line. The project features well-planned 1 RK and 1 BHK apartments with modern amenities including a clubhouse, badminton court, children's play area, and landscaped gardens. Eligible buyers may apply for PM Awas Yojana (PMAY) subsidy benefits. Symphonee Greens is one of the most affordable entry points into property ownership in the Thane region.",
     price: "From ₹13.32 L",
     priceNote: "All inclusive",
     developer: "Knox Realty",
     rera: "Applied",
+    reraNumber: "Application Pending — RERA Number to be updated upon registration",
+    reraUrl: "https://maharera.mahaonline.gov.in",
     status: "upcoming",
-    statusLabel: "Pre-Launch",
+    statusLabel: "Under Construction",
+    underConstruction: true,
     propertyType: "affordable",
     budget: "0-30",
     featured: true,
@@ -95,6 +98,9 @@ export const PROJECTS: Project[] = [
     price: "From ₹29 L",
     developer: "Aurus & JB United",
     rera: "OC Received",
+    // TODO: Replace placeholder with actual MahaRERA registration number
+    reraNumber: "P51700XXXXXXX",
+    reraUrl: "https://maharera.mahaonline.gov.in",
     status: "ready",
     statusLabel: "Ready to Move",
     propertyType: "flat",
@@ -176,6 +182,9 @@ export const PROJECTS: Project[] = [
     price: "From ₹12 L",
     developer: "Royale Group",
     rera: "OC Received",
+    // TODO: Replace placeholder with actual MahaRERA registration number
+    reraNumber: "P51700XXXXXXX",
+    reraUrl: "https://maharera.mahaonline.gov.in",
     status: "ready",
     statusLabel: "Ready to Move",
     propertyType: "affordable",
@@ -240,6 +249,9 @@ export const PROJECTS: Project[] = [
     price: "",
     developer: "Knox Realty / JB United",
     rera: "TP Sanctioned",
+    // TODO: Replace placeholder with actual MahaRERA registration number
+    reraNumber: "P51700XXXXXXX",
+    reraUrl: "https://maharera.mahaonline.gov.in",
     status: "ready",
     statusLabel: "Plots Available",
     propertyType: "plot",
