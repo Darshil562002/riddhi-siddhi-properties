@@ -1,11 +1,8 @@
 export const CONFIG = {
   brand: "Riddhi Siddhi Properties",
   tagline: "Properties",
-  contact: "Keval Gala",
   phone: "+919619422555",
   phoneDisplay: "+91 96194 22555",
-  altPhone: "+919619422555",
-  altPhoneDisplay: "+91 96194 22555",
   whatsapp:
     "https://wa.me/919619422555?text=Hello%2C%20I%20am%20interested%20in%20a%20property.%20Please%20assist.",
   callLink: "tel:+919619422555",

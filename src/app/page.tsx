@@ -143,10 +143,9 @@ export default function HomePage() {
       {/* ── STATS ── */}
       <section className="py-16" style={{ background: "#1F2933" }} aria-label="Key statistics">
         <div className="container">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {[
               { num: "500+", label: "Families Served" },
-              { num: "50+",  label: "Projects Listed" },
               { num: "10+",  label: "Years of Experience" },
               { num: "100%", label: "Transparent Guidance" },
             ].map((s) => (

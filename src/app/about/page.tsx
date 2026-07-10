@@ -42,8 +42,8 @@ export default function AboutPage() {
                 <div className="w-24 h-24 rounded-full bg-forest flex items-center justify-center font-serif text-4xl font-bold text-white mx-auto mb-6">RS</div>
                 <div className="font-serif text-2xl font-semibold text-dark mb-2">Riddhi Siddhi Properties</div>
                 <div className="text-text-mid text-sm">Est. in Shahapur–Asangaon, Thane</div>
-                <div className="grid grid-cols-2 gap-4 mt-8">
-                  {[{ n: "500+", l: "Families" }, { n: "10+", l: "Years" }, { n: "50+", l: "Projects" }, { n: "100%", l: "Honest" }].map(s => (
+                <div className="grid grid-cols-3 gap-3 mt-8">
+                  {[{ n: "500+", l: "Families" }, { n: "10+", l: "Years" }, { n: "100%", l: "Honest" }].map(s => (
                     <div key={s.l} className="bg-white rounded-lg p-3 text-center shadow-sm">
                       <div className="font-serif text-xl font-bold text-forest">{s.n}</div>
                       <div className="text-[0.72rem] text-text-light uppercase tracking-wider">{s.l}</div>
@@ -129,11 +129,10 @@ export default function AboutPage() {
             {/* Track Record */}
             <div className="bg-forest rounded-2xl p-10 text-white">
               <h3 className="text-white text-center mb-8">Our Track Record</h3>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {[
                   { n: "500+", l: "Families Served" },
                   { n: "10+", l: "Years Experience" },
-                  { n: "50+", l: "Projects Handled" },
                   { n: "100%", l: "Honest Guidance" },
                 ].map((s) => (
                   <div key={s.l} className="text-center">
