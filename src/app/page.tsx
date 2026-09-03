@@ -22,9 +22,9 @@ export default function HomePage() {
     <main>
       {/* ── HERO ── */}
       <section
-        className="relative min-h-[92vh] flex items-center overflow-hidden"
+        className="relative min-h-[100svh] flex items-start lg:items-center overflow-hidden"
         aria-label="Hero"
-        style={{ marginTop: "-72px" }} /* pull up behind transparent header */
+        style={{ marginTop: "-72px" }}
       >
         {/* Background image */}
         <Image
@@ -64,13 +64,16 @@ export default function HomePage() {
           }}
         />
 
-        <div className="container relative z-10 py-24 pt-36">
+        <div 
+          className="container relative z-10 pb-12 lg:py-24"
+          style={{ paddingTop: "140px" }}
+        >
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div>
               {/* Trust chip */}
               <div
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[0.72rem] font-semibold tracking-widest uppercase mb-8"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl text-[0.72rem] font-semibold tracking-widest uppercase mb-8"
                 style={{
                   background: "rgba(26,141,122,0.15)",
                   color: "#3ABFAA",
@@ -91,9 +94,7 @@ export default function HomePage() {
               >
                 Find Your Perfect{" "}
                 <span className="gold-shimmer-text">Home</span>
-                {" "}With
-                <br />
-                Confidence
+                {" "}With Confidence
               </h1>
               <p
                 className="text-[1.05rem] leading-relaxed mb-8 max-w-lg font-sans"
@@ -104,10 +105,10 @@ export default function HomePage() {
                 visit to keys in hand.
               </p>
 
-              <div className="flex flex-wrap gap-4 mb-10">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-10">
                 <Link
                   href="/projects"
-                  className="btn btn-gold btn-lg"
+                  className="btn btn-gold btn-lg w-full sm:w-auto justify-center"
                   id="hero-explore-btn"
                 >
                   <Home size={18} />
@@ -115,7 +116,7 @@ export default function HomePage() {
                 </Link>
                 <Link
                   href="/contact#site-visit"
-                  className="btn btn-outline-white btn-lg"
+                  className="btn btn-outline-white btn-lg w-full sm:w-auto justify-center"
                   id="hero-visit-btn"
                 >
                   Book a Site Visit
@@ -247,7 +248,7 @@ export default function HomePage() {
 
       {/* ── FEATURED PROJECTS ── */}
       <section
-        className="py-24"
+        className="py-14 lg:py-24"
         style={{ background: "linear-gradient(180deg, #0A0D12 0%, #0F1520 100%)" }}
         id="featured-projects"
         aria-labelledby="projects-heading"
@@ -294,7 +295,7 @@ export default function HomePage() {
 
       {/* ── STATS ── */}
       <section
-        className="py-20"
+        className="py-12 lg:py-20"
         style={{
           background:
             "linear-gradient(135deg, #0F1520 0%, #1A2230 50%, #0F1520 100%)",
@@ -334,7 +335,7 @@ export default function HomePage() {
 
       {/* ── WHY CHOOSE US ── */}
       <section
-        className="py-24"
+        className="py-14 lg:py-24"
         style={{ background: "linear-gradient(180deg, #0F1520 0%, #0A0D12 100%)" }}
         id="why-choose"
         aria-labelledby="why-heading"
@@ -422,7 +423,7 @@ export default function HomePage() {
 
       {/* ── BUYER HELP SHORTCUTS ── */}
       <section
-        className="py-24"
+        className="py-14 lg:py-24"
         style={{ background: "#0A0D12" }}
         id="buyer-help-shortcuts"
         aria-labelledby="buyer-help-heading"
@@ -522,7 +523,7 @@ export default function HomePage() {
 
       {/* ── TESTIMONIALS ── */}
       <section
-        className="py-24"
+        className="py-14 lg:py-24"
         style={{
           background:
             "linear-gradient(135deg, #0F1520 0%, #1A2230 50%, #0F1520 100%)",
@@ -634,7 +635,7 @@ export default function HomePage() {
 
       {/* ── CTA BANNER ── */}
       <section
-        className="py-24"
+        className="py-14 lg:py-24"
         style={{ background: "#0A0D12" }}
         aria-label="Call to action"
       >

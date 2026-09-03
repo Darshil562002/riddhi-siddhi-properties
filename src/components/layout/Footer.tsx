@@ -225,6 +225,7 @@ export default function Footer() {
           className="flex-1 flex items-center justify-center gap-2 py-3.5 text-[0.85rem] font-semibold text-white no-underline"
           style={{
             background: "linear-gradient(135deg, #25D366 0%, #1ebe5d 100%)",
+            color: "#ffffff"
           }}
           id="mobile-sticky-whatsapp"
         >

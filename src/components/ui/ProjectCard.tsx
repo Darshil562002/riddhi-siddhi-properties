@@ -54,28 +54,29 @@ export default function ProjectCard({ project, titleTag: Tag = "h3" }: ProjectCa
             background: "linear-gradient(to top, rgba(10,13,18,0.55) 0%, transparent 50%)",
           }}
         />
-        {/* Status badge */}
-        <span
-          className="absolute top-3 left-3 px-3 py-1 rounded-full text-[0.72rem] font-semibold uppercase tracking-wider backdrop-blur-sm"
-          style={{
-            background: badge.bg,
-            color: badge.color,
-            border: `1px solid ${badge.color}33`,
-          }}
-        >
-          {project.statusLabel}
-        </span>
-        {/* Type badge top right */}
-        <span
-          className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[0.68rem] font-semibold uppercase tracking-wider backdrop-blur-sm"
-          style={{
-            background: "rgba(14,18,24,0.65)",
-            color: "rgba(245,179,1,0.90)",
-            border: "1px solid rgba(245,179,1,0.18)",
-          }}
-        >
-          {project.type}
-        </span>
+        {/* Badges */}
+        <div className="absolute top-3 left-3 flex flex-col gap-2 items-start z-20 pr-3">
+          <span
+            className="px-3 py-1 rounded-full text-[0.72rem] font-semibold uppercase tracking-wider backdrop-blur-sm"
+            style={{
+              background: badge.bg,
+              color: badge.color,
+              border: `1px solid ${badge.color}33`,
+            }}
+          >
+            {project.statusLabel}
+          </span>
+          <span
+            className="px-2.5 py-1 rounded-full text-[0.68rem] font-semibold uppercase tracking-wider backdrop-blur-sm"
+            style={{
+              background: "rgba(14,18,24,0.65)",
+              color: "rgba(245,179,1,0.90)",
+              border: "1px solid rgba(245,179,1,0.18)",
+            }}
+          >
+            {project.type}
+          </span>
+        </div>
       </div>
 
       {/* Body */}
