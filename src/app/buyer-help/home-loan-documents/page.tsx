@@ -25,7 +25,7 @@ export default function HomeLoanDocsPage() {
 
       <section className="page-hero" aria-label="Home Loan Documents hero">
         <div className="container">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/85 text-[0.75rem] font-semibold tracking-widest uppercase mb-6">Loan Guide</span>
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[rgba(245,179,1,0.12)] border border-[rgba(245,179,1,0.25)] text-[#F5B301] text-[0.75rem] font-semibold tracking-widest uppercase mb-6">Loan Guide</span>
           <h1>Home Loan Documents Checklist</h1>
           <p>Be fully prepared before visiting your bank. Here is a complete, categorized list of documents needed for a home loan — for both salaried and self-employed buyers.</p>
         </div>

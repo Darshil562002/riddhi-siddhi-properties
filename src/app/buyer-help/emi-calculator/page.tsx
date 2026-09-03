@@ -46,7 +46,7 @@ export default function EMICalculatorPage() {
 
       <section className="page-hero" aria-label="EMI Calculator hero">
         <div className="container">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/85 text-[0.75rem] font-semibold tracking-widest uppercase mb-6">Planning Tool</span>
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[rgba(245,179,1,0.12)] border border-[rgba(245,179,1,0.25)] text-[#F5B301] text-[0.75rem] font-semibold tracking-widest uppercase mb-6">Planning Tool</span>
           <h1>Home Loan EMI Calculator</h1>
           <p>Plan your monthly payments instantly. No registration needed — calculate EMI, total interest, and loan breakdown in seconds.</p>
         </div>

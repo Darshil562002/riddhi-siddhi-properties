@@ -66,7 +66,7 @@ export default function BuyerHelpPage() {
 
       <section className="page-hero" aria-label="Buyer Help hero">
         <div className="container">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/85 text-[0.75rem] font-semibold tracking-widest uppercase mb-6">Knowledge Centre</span>
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[rgba(245,179,1,0.12)] border border-[rgba(245,179,1,0.25)] text-[#F5B301] text-[0.75rem] font-semibold tracking-widest uppercase mb-6">Knowledge Centre</span>
           <h1>Buyer Help &amp; Resources</h1>
           <p>We go beyond property listings. Riddhi Siddhi Properties helps you understand loans, government schemes, legal verification, and documentation — so you can buy with confidence, clarity, and zero confusion.</p>
         </div>

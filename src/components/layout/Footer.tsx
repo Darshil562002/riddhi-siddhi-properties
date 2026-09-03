@@ -6,49 +6,78 @@ import { WhatsAppIcon } from "@/components/ui/Icons";
 export default function Footer() {
   return (
     <>
-      <footer style={{ background: "#1F2933", color: "#FFFDF6" }} className="pt-16 pb-6">
+      <footer
+        style={{
+          background: "linear-gradient(180deg, #0A0D12 0%, #060810 100%)",
+          color: "#FFFDF6",
+          borderTop: "1px solid rgba(245,179,1,0.20)",
+        }}
+        className="pt-16 pb-6"
+      >
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
             {/* Brand Column */}
             <div>
-              <Link href="/" className="flex items-center gap-2 mb-4 no-underline">
+              <Link href="/" className="flex items-center gap-2.5 mb-5 no-underline group">
                 <div
-                  className="w-10 h-10 rounded-lg flex items-center justify-center font-serif font-bold text-lg leading-none"
-                  style={{ background: "#F5B301", color: "#1F2933" }}
+                  className="w-11 h-11 rounded-xl flex items-center justify-center font-serif font-bold text-lg leading-none transition-transform duration-300 group-hover:scale-105"
+                  style={{
+                    background: "linear-gradient(135deg, #1A8D7A 0%, #147265 100%)",
+                    color: "#FFFDF6",
+                    boxShadow: "0 2px 12px rgba(26,141,122,0.30)",
+                  }}
                 >
                   RS
                 </div>
                 <div className="flex flex-col leading-tight">
-                  <span className="font-serif font-semibold text-[1.05rem]" style={{ color: "#FFFDF6" }}>
+                  <span
+                    className="font-serif font-bold text-[1.05rem]"
+                    style={{ color: "#FFFDF6" }}
+                  >
                     Riddhi Siddhi
                   </span>
-                  <span className="text-[0.65rem] font-semibold tracking-[0.12em] uppercase" style={{ color: "rgba(255,253,246,0.50)" }}>
+                  <span
+                    className="text-[0.62rem] font-semibold tracking-[0.14em] uppercase"
+                    style={{ color: "rgba(245,179,1,0.65)" }}
+                  >
                     Properties
                   </span>
                 </div>
               </Link>
-              <p className="text-[0.88rem] leading-relaxed mb-5" style={{ color: "rgba(255,253,246,0.55)" }}>
-                Your trusted partner for home buying in Shahapur–Asangaon, Thane. We
-                help families find the right home — with honest guidance, transparent
-                support, and deep local knowledge.
+              <p
+                className="text-[0.88rem] leading-relaxed mb-5"
+                style={{ color: "rgba(255,253,246,0.50)" }}
+              >
+                Your trusted partner for home buying in Shahapur–Asangaon,
+                Thane. Honest guidance, transparent support, and deep local
+                knowledge — from site visit to keys in hand.
               </p>
               <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-2 text-[0.85rem]" style={{ color: "rgba(255,253,246,0.60)" }}>
-                  <Phone size={14} className="flex-shrink-0" />
+                <div
+                  className="flex items-center gap-2 text-[0.85rem]"
+                  style={{ color: "rgba(255,253,246,0.50)" }}
+                >
+                  <Phone size={13} className="flex-shrink-0" style={{ color: "rgba(245,179,1,0.65)" }} />
                   <a
                     href={CONFIG.callLink}
-                    className="no-underline transition-colors"
-                    style={{ color: "rgba(255,253,246,0.60)" }}
+                    className="footer-link no-underline transition-colors"
+                    style={{ color: "rgba(255,253,246,0.50)" }}
                   >
                     {CONFIG.phoneDisplay}
                   </a>
                 </div>
-                <div className="flex items-start gap-2 text-[0.85rem]" style={{ color: "rgba(255,253,246,0.60)" }}>
-                  <MapPin size={14} className="flex-shrink-0 mt-0.5" />
+                <div
+                  className="flex items-start gap-2 text-[0.85rem]"
+                  style={{ color: "rgba(255,253,246,0.50)" }}
+                >
+                  <MapPin size={13} className="flex-shrink-0 mt-0.5" style={{ color: "rgba(245,179,1,0.65)" }} />
                   <span>{CONFIG.address}</span>
                 </div>
-                <div className="flex items-center gap-2 text-[0.85rem]" style={{ color: "rgba(255,253,246,0.60)" }}>
-                  <Clock size={14} className="flex-shrink-0" />
+                <div
+                  className="flex items-center gap-2 text-[0.85rem]"
+                  style={{ color: "rgba(255,253,246,0.50)" }}
+                >
+                  <Clock size={13} className="flex-shrink-0" style={{ color: "rgba(245,179,1,0.65)" }} />
                   <span>{CONFIG.hours}</span>
                 </div>
               </div>
@@ -56,16 +85,19 @@ export default function Footer() {
 
             {/* Quick Links */}
             <div>
-              <h5 className="text-[0.82rem] font-semibold uppercase tracking-[0.08em] mb-4 font-sans" style={{ color: "#F5B301" }}>
+              <h5
+                className="text-[0.75rem] font-bold uppercase tracking-[0.12em] mb-4 font-sans"
+                style={{ color: "#F5B301" }}
+              >
                 Quick Links
               </h5>
-              <ul className="flex flex-col gap-2">
+              <ul className="flex flex-col gap-2.5">
                 {FOOTER_LINKS.quickLinks.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-[0.88rem] no-underline transition-colors"
-                      style={{ color: "rgba(255,253,246,0.55)" }}
+                      className="footer-link text-[0.875rem] no-underline transition-colors"
+                      style={{ color: "rgba(255,253,246,0.50)" }}
                     >
                       {link.label}
                     </Link>
@@ -76,16 +108,19 @@ export default function Footer() {
 
             {/* Buyer Resources */}
             <div>
-              <h5 className="text-[0.82rem] font-semibold uppercase tracking-[0.08em] mb-4 font-sans" style={{ color: "#F5B301" }}>
+              <h5
+                className="text-[0.75rem] font-bold uppercase tracking-[0.12em] mb-4 font-sans"
+                style={{ color: "#F5B301" }}
+              >
                 Buyer Resources
               </h5>
-              <ul className="flex flex-col gap-2">
+              <ul className="flex flex-col gap-2.5">
                 {FOOTER_LINKS.buyerResources.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-[0.88rem] no-underline transition-colors"
-                      style={{ color: "rgba(255,253,246,0.55)" }}
+                      className="footer-link text-[0.875rem] no-underline transition-colors"
+                      style={{ color: "rgba(255,253,246,0.50)" }}
                     >
                       {link.label}
                     </Link>
@@ -96,15 +131,24 @@ export default function Footer() {
 
             {/* Get in Touch */}
             <div>
-              <h5 className="text-[0.82rem] font-semibold uppercase tracking-[0.08em] mb-4 font-sans" style={{ color: "#F5B301" }}>
+              <h5
+                className="text-[0.75rem] font-bold uppercase tracking-[0.12em] mb-4 font-sans"
+                style={{ color: "#F5B301" }}
+              >
                 Get in Touch
               </h5>
-              <p className="text-[0.85rem] mb-4 leading-relaxed" style={{ color: "rgba(255,253,246,0.55)" }}>
-                Speak directly with {CONFIG.contact} for property guidance, site
-                visits, and expert advice.
+              <p
+                className="text-[0.875rem] mb-5 leading-relaxed"
+                style={{ color: "rgba(255,253,246,0.50)" }}
+              >
+                Speak directly with {CONFIG.contact} for property guidance,
+                site visits, and expert advice.
               </p>
-              <div className="flex flex-col gap-2">
-                <a href={CONFIG.callLink} className="btn btn-outline-white btn-sm justify-center">
+              <div className="flex flex-col gap-2.5">
+                <a
+                  href={CONFIG.callLink}
+                  className="btn btn-outline-white btn-sm justify-center"
+                >
                   <Phone size={14} />
                   Call Now
                 </a>
@@ -121,16 +165,31 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Divider */}
+          <div style={{ borderTop: "1px solid rgba(255,253,246,0.07)" }} />
+
           {/* Footer Bottom */}
-          <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4" style={{ borderTop: "1px solid rgba(255,253,246,0.10)" }}>
-            <p className="text-[0.78rem]" style={{ color: "rgba(255,253,246,0.40)" }}>
-              © {new Date().getFullYear()} Riddhi Siddhi Properties. All rights reserved.
+          <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p
+              className="text-[0.78rem]"
+              style={{ color: "rgba(255,253,246,0.30)" }}
+            >
+              © {new Date().getFullYear()} Riddhi Siddhi Properties. All rights
+              reserved.
             </p>
-            <div className="flex items-center gap-4 text-[0.78rem]">
-              <Link href="/privacy-policy" className="no-underline transition-colors" style={{ color: "rgba(255,253,246,0.40)" }}>
+            <div className="flex items-center gap-5 text-[0.78rem]">
+              <Link
+                href="/privacy-policy"
+                className="footer-link no-underline transition-colors"
+                style={{ color: "rgba(255,253,246,0.30)" }}
+              >
                 Privacy Policy
               </Link>
-              <Link href="/sitemap.xml" className="no-underline transition-colors" style={{ color: "rgba(255,253,246,0.40)" }}>
+              <Link
+                href="/sitemap.xml"
+                className="footer-link no-underline transition-colors"
+                style={{ color: "rgba(255,253,246,0.30)" }}
+              >
                 Sitemap
               </Link>
             </div>
@@ -139,22 +198,34 @@ export default function Footer() {
       </footer>
 
       {/* Mobile Sticky CTA Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden flex" style={{ background: "#FFFDF6", borderTop: "1px solid #E0D5B8", boxShadow: "0 -2px 10px rgba(31,41,51,0.07)" }}>
+      <div
+        className="fixed bottom-0 left-0 right-0 z-40 lg:hidden flex"
+        style={{
+          background: "rgba(10,13,18,0.97)",
+          borderTop: "1px solid rgba(245,179,1,0.20)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+          boxShadow: "0 -4px 20px rgba(0,0,0,0.35)",
+        }}
+      >
         <a
           href={CONFIG.callLink}
           className="flex-1 flex items-center justify-center gap-2 py-3.5 text-[0.85rem] font-semibold no-underline transition-colors"
-          style={{ color: "#1A8D7A" }}
+          style={{ color: "#F5B301" }}
           id="mobile-sticky-call"
         >
           <Phone size={18} />
           Call Now
         </a>
+        <div style={{ width: "1px", background: "rgba(245,179,1,0.15)" }} />
         <a
           href={CONFIG.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
           className="flex-1 flex items-center justify-center gap-2 py-3.5 text-[0.85rem] font-semibold text-white no-underline"
-          style={{ background: "#25D366" }}
+          style={{
+            background: "linear-gradient(135deg, #25D366 0%, #1ebe5d 100%)",
+          }}
           id="mobile-sticky-whatsapp"
         >
           <WhatsAppIcon size={18} />

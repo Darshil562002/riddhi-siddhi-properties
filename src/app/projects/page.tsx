@@ -69,8 +69,15 @@ export default function ProjectsClient() {
 
       {/* Hero */}
       <section className="page-hero" aria-label="Projects hero">
-        <div className="container">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/85 text-[0.75rem] font-semibold tracking-widest uppercase mb-6">
+        <div className="container relative z-10">
+          <span
+            className="inline-block px-4 py-2 rounded-full text-[0.72rem] font-semibold tracking-widest uppercase mb-6"
+            style={{
+              background: "rgba(245,179,1,0.12)",
+              border: "1px solid rgba(245,179,1,0.25)",
+              color: "#F5B301",
+            }}
+          >
             All Listings
           </span>
           <h1>Explore Our Projects</h1>
@@ -82,7 +89,16 @@ export default function ProjectsClient() {
       </section>
 
       {/* Filters */}
-      <div className="bg-white border-b border-border-lt sticky top-[72px] z-30 shadow-sm">
+      <div
+        className="sticky top-[72px] z-30"
+        style={{
+          background: "rgba(255,253,246,0.97)",
+          borderBottom: "1px solid rgba(224,213,184,0.70)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          boxShadow: "0 2px 16px rgba(31,41,51,0.06)",
+        }}
+      >
         <div className="container py-4">
           <div className="flex flex-col md:flex-row gap-3 items-stretch md:items-center">
             {/* Search */}
@@ -120,7 +136,7 @@ export default function ProjectsClient() {
       </div>
 
       {/* Results */}
-      <section className="py-16 bg-ivory" aria-live="polite" aria-label="Project listings">
+      <section className="py-16" style={{ background: "#FFFDF6" }} aria-live="polite" aria-label="Project listings">
         <div className="container">
           <div className="flex items-center justify-between mb-8">
             <p className="text-text-mid text-[0.9rem]">
@@ -147,7 +163,7 @@ export default function ProjectsClient() {
       </section>
 
       {/* Didn't find section */}
-      <section className="py-14 bg-cream border-t border-border-lt" aria-label="Custom inquiry">
+      <section className="py-14 border-t" style={{ background: "#FFF7D1", borderColor: "rgba(224,213,184,0.60)" }} aria-label="Custom inquiry">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
             <h3 className="mb-3">Don&apos;t See What You&apos;re Looking For?</h3>

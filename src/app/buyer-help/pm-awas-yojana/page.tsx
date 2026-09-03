@@ -37,7 +37,7 @@ export default function PMAYPage() {
 
       <section className="page-hero" aria-label="PMAY hero">
         <div className="container">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/85 text-[0.75rem] font-semibold tracking-widest uppercase mb-6">Government Scheme — Updated 2026</span>
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[rgba(245,179,1,0.12)] border border-[rgba(245,179,1,0.25)] text-[#F5B301] text-[0.75rem] font-semibold tracking-widest uppercase mb-6">Government Scheme — Updated 2026</span>
           <h1>PM Awas Yojana 2026 — 2026 Home Buyer Scheme Guide</h1>
           <p>Everything you need to know about India&apos;s housing subsidy scheme for 2026. Check your eligibility and see how much you can save on your home loan under PMAY 2.0.</p>
         </div>
