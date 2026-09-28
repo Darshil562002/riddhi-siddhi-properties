@@ -136,11 +136,13 @@ export default function ProjectsClient() {
       </div>
 
       {/* Results */}
-      <section className="py-16" style={{ background: "#FFFDF6" }} aria-live="polite" aria-label="Project listings">
+      <section className="py-14" style={{ background: "#F2EDE0" }} aria-live="polite" aria-label="Project listings">
         <div className="container">
-          <div className="flex items-center justify-between mb-8">
-            <p className="text-text-mid text-[0.9rem]">
-              Showing <strong className="text-dark">{filtered.length}</strong> of {PROJECTS.length} projects
+          <div className="flex items-center justify-between mb-6">
+            <p className="text-[0.88rem]" style={{ color: "#6A6A6A" }}>
+              Showing{" "}
+              <strong style={{ color: "#0E1218", fontWeight: 700 }}>{filtered.length}</strong>
+              {" "}of {PROJECTS.length} projects
             </p>
           </div>
 
@@ -153,9 +155,9 @@ export default function ProjectsClient() {
               <a href={CONFIG.callLink} className="btn btn-primary"><Phone size={15} /> Call Us</a>
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filtered.map((project) => (
-                <ProjectCard key={project.id} project={project} titleTag="h2" />
+                <ProjectCard key={project.id} project={project} titleTag="h2" variant="light" />
               ))}
             </div>
           )}

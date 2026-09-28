@@ -274,7 +274,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
             {featuredProjects.map((project, i) => (
               <ScrollReveal key={project.id} delay={(i + 1) as 1 | 2 | 3}>
-                <ProjectCard project={project} titleTag="h3" />
+                <ProjectCard project={project} titleTag="h3" variant="dark" />
               </ScrollReveal>
             ))}
           </div>
